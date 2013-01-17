@@ -10,20 +10,20 @@ RECSEP = '=>'
 
 
 def storeDbase(db, dbfilename=dbfilename):
-    fid = open(dbfilename,'w')
+    fid = open(dbfilename, 'w')
     for key in db:
-        print(key,file=fid)
+        print(key, file=fid)
         for (name, value) in db[key].items():
-            print(name+RECSEP+repr(value), file=fid)
-        print(ENDREC,file=fid)
-    print(ENDDB,file=fid)
+            print(name + RECSEP + repr(value), file=fid)
+        print(ENDREC, file=fid)
+    print(ENDDB, file=fid)
     fid.close()
     
 def loadDbase(dbfilename=dbfilename):
-    file = open(dbfilename,'r')
+    file = open(dbfilename, 'r')
     import sys
     sys.stdin = file
-    db ={}
+    db = {}
     key = input()
     while key != ENDDB:
         rec = {}

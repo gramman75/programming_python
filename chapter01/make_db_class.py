@@ -21,12 +21,12 @@ def storeDbase(dbfilename=dbfilename):
     db.close()
     
 def loadDbase(dbfilename=dbfilename):
-    db=shelve.open(dbfilename)
+    db = shelve.open(dbfilename)
     return db
 
-if __name__=='__main__':
+if __name__ == '__main__':
     storeDbase()
     db = loadDbase()
     for key in db:
-        print(key+'=>'+str(db[key]))
+        print(key + '=>' + str(db[key]))
     

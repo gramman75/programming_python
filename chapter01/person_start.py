@@ -11,7 +11,7 @@ class Person:
         self.job = job
         
     def __str__(self):
-        return '<%s => %s>'  % (self.__class__.__name__, self.name)
+        return '<%s => %s>' % (self.__class__.__name__, self.name)
     
 class Manager(Person):
     def __init__(self, name, age, pay=0):
