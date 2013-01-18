@@ -1,0 +1,8 @@
+Enter Number :1 squared is 1
+Enter Number :2 squared is 4
+Enter Number :3 squared is 9
+Enter Number :4 squared is 16
+Enter Number :5 squared is 25
+Enter Number :6 squared is 36
+Enter Number :7 squared is 49
+Enter Number :Bye!
