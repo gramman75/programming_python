@@ -9,7 +9,7 @@ count = 0
 def adder():
     global count
     count = count + 1
-    time.sleep(0.5)
+    time.sleep(.5)
     count = count + 1
     #print(count)
 
