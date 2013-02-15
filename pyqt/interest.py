@@ -5,7 +5,6 @@ Created on 2013. 2. 4.
 '''
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-
 import sys
 
 class Form(QDialog):
