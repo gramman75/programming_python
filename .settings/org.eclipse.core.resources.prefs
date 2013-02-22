@@ -4,4 +4,7 @@ encoding//chap06/ui_newimagedlg.py=utf-8
 encoding//chapter01/init_data.py=utf8
 encoding//chapter02/test.ui.py=utf-8
 encoding//chapter02/test_qt.py=utf-8
+encoding//mainwindow/imagechanger.py=utf8
+encoding//mainwindow/qrc_resources.py=utf-8
+encoding//mainwindow/ui_newimagedlg.py=utf-8
 encoding//pyqt/layout.ui.py=utf-8
