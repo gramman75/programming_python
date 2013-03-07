@@ -5,7 +5,7 @@ Created on 2013. 1. 31.
 '''
 
 import sys
-
+from math import *
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
@@ -27,6 +27,7 @@ class Form(QDialog):
     def updateui(self):
         try:
             text = self.lineEdit.text()
+            print text
             self.browser.append("%s = <b>%s</b>" %(text, eval(text)))
         except:
             self.browser.append("%s = <font color=red><b>%s</b></font>" %(text, "Invalid"))

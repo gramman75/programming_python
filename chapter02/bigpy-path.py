@@ -1,3 +1,5 @@
+#-*- encoding:utf8 -*-
+
 '''
 Created on 2013. 1. 25.
 
@@ -14,15 +16,17 @@ except IndexError:
 allFile =[]
 visited =[]
 
+target = open('c:\\target.txt','w')
+
 for dir in pythonPath:
-    for (thisDir, subsHere, filesHere) in os.walk(dir):
-        
+    for (thisDir, subsHere, filesHere) in os.walk(r'D:\clearcase\stmkmk_view\ERP_OVS\Doc'):
+        '''
         try:
             print(thisDir)
         except UnicodeEncodeError:
             print(thisDir.encode())
             
-        
+        '''
         thisDir = os.path.normcase(thisDir)
         if thisDir in visited:
             continue
@@ -30,15 +34,17 @@ for dir in pythonPath:
             visited.append(thisDir)
         
         for file in filesHere:
-            if file.endswith('.py'):
+            if file.endswith('.doc'):
                 fullName = os.path.join(thisDir,file)
                 fileSize = os.path.getsize(fullName)                
-                fileLine = len(open(fullName,'rb').readlines())
-                allFile.append( (fileSize, fileLine,fullName))               
+                #fileLine = len(open(fullName,'rb').readlines())
+              
+                
+                #allFile.append( (fileSize, fileLine,fullName))         
+                
+                target.write(fullName+'\r')
+        
+        
+                      
 
 
-allFile.sort()
-print(allFile[-2:])
-
-allFile.sort(key= lambda x : x[1])
-print(allFile[-2:])
