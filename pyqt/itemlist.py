@@ -80,7 +80,7 @@ class Form(QDialog):
             self.listBox.setCurrentItem(item)
     
     def sortItem(self):
-        pass
+        self.listBox.sortItems()
     
     def accept(self):
         QDialog.accept(self)

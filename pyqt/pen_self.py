@@ -76,7 +76,7 @@ class Form(QDialog):
         self.connect(cancelButton, SIGNAL('clicked()'),form,SLOT('reject()'))
         
         if form.exec_():
-            print('a')
+            
             self.width = widthSpin.value()
             self.style = styleCombo.currentText()
             self.beveled = bevelCheck.isChecked()
