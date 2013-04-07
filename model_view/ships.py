@@ -21,7 +21,8 @@ class Ship(object):
     
 class ShipContainer(object):
     
-    def __init__(self,filename=QString()):
+    def __init__(self,filename):
+
         self.filename = QString(filename)
         self.dirty = False
         self.ships = {}
