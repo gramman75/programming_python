@@ -10,3 +10,12 @@ import sys
 a = 'abc'  # 테스트 주석
 for i in a:
     print i
+    print i
+
+
+    
+    
+
+
+a = 1
+print a
