@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
 
         sourcePathLayout = QHBoxLayout()
         sourcePathLayout.addWidget(sourceLabel)
-        sourcePathLayout.addWidget(sourceLineEdit
+        #sourcePathLayout.addWidget(sourceLineEdit
 
 
         model = QFileSystemModel()

@@ -14,7 +14,19 @@ class Form(QDialog):
         super(Form, self).__init__(parent)
         
         self.browser = QTextBrowser()
-        self.lineEdit
+        self.lineEdit = QLineEdit()
+        
+        layout = QVBoxLayout()
+        layout.addWidget(self.browser)
+        layout.addWidget(self.lineEdit)
+        
+        self.setLayout(layout)
+        
+        self.connect(self.lineEdit, SIGNAL("returnPressed()"), self.updateui)
+        
+    def updateui(self):
+        a = self.lineEdit.text()
+        self.browser.setText(a)
 
 app = QApplication(sys.argv)
 form = Form()

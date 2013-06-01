@@ -1,6 +1,6 @@
 #-*- encoding:euc-kr -*-
 import glob, os, re, time
-#from microsofttranslator import Translator
+from microsofttranslator import Translator
 
 
 #translator = Translator('GSI_CHECK', 'm1ZX2yz3UVbmx7s2TVoaonjIsSqLvNjUtSd0VL1peBw=')
@@ -16,16 +16,16 @@ exception_list =[]
 #for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
 #    check_lookup.append(line[:-1])
 
-for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding.txt')):
+for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding_fmb.txt')):
     check_hardcoding.append(line[:-1])        
 
 #for line in open(os.path.join(ROOT_DIR,'basis','exception_list.txt')):
 #    exception_list.append(line[:-1])
 #    print exception_list
 
-fname_kor = open(os.path.join(ROOT_DIR,'kor_list.txt'),'w')
+fname_kor = open(os.path.join(ROOT_DIR,'kor_list_fmb.txt'),'w')
 fname_kor.write('Program' + SEP + 'Line' + SEP + 'Source'+SEP+'Translate'+'\r')
-fname_summary = open(os.path.join(ROOT_DIR,'summary.txt'),'w')
+fname_summary = open(os.path.join(ROOT_DIR,'summary_fmb.txt'),'w')
 fname_summary.write('Pragram'+SEP+'Type'+SEP+'Line'+SEP+'Source'+'\r')
     
 def check_kor(program, w, lineNum, origin, line):
@@ -99,7 +99,7 @@ def check(w, program, lineNum, origin, line):
                 flag=True
                 
     #Hardcoding Check
-    for hardcoding in check_hardcoding:       
+    for hardcoding in check_hardcoding:
         p = re.compile(r'\b'+ hardcoding +r'\b')
         #print re.search(p,line)
         if re.search(p,line):
@@ -115,7 +115,7 @@ def check(w, program, lineNum, origin, line):
 #    command = 'frmcmp.exe batch=yes module_type=form userid=devs/devs@erpprod forms_doc=YES WINDOW_STATE=MINIMIZE module='+formName
 #    os.system(command)
 
-textList = glob.glob(os.path.join(ROOT_DIR,'source_db_0328','*.*'))
+textList = glob.glob(os.path.join(ROOT_DIR,'source_fmb_0327','*.txt'))
 target_dir = os.path.join(ROOT_DIR,'temp')
 suffix = ''
 

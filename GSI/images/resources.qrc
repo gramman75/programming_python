@@ -1,0 +1,8 @@
+<!DOCTYPE RRC>
+<rcc>
+<qresource>
+<file alias="filenew.png">images/filenew.png</file>
+<file alias="fileopen.png">images/fileopen.png</file>
+
+</qresource>
+</rcc>

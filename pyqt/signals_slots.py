@@ -33,6 +33,7 @@ class Form(QDialog):
         self.setWindowTitle('Signals and Slots')
 app = QApplication(sys.argv)
 form = Form()
+form.siz
 form.show()
 app.exec_()            
         

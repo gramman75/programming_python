@@ -1,0 +1,16 @@
+(iperson
+Person
+p0
+(dp1
+S'pay'
+p2
+I0
+sS'job'
+p3
+S'dev'
+p4
+sS'name'
+p5
+S'kim'
+p6
+sb.

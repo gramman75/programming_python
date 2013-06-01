@@ -1,6 +1,6 @@
 #-*- encoding:euc-kr -*-
 import glob, os, re, time
-from microsofttranslator import Translator
+#from microsofttranslator import Translator
 
 
 #translator = Translator('GSI_CHECK', 'm1ZX2yz3UVbmx7s2TVoaonjIsSqLvNjUtSd0VL1peBw=')
@@ -13,15 +13,15 @@ check_lookup = []
 check_hardcoding =[]
 exception_list =[]
 
-for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
-    check_lookup.append(line[:-1])
+#for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
+#    check_lookup.append(line[:-1])
 
 for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding_fmb.txt')):
     check_hardcoding.append(line[:-1])        
 
-for line in open(os.path.join(ROOT_DIR,'basis','exception_list.txt')):
-    exception_list.append(line[:-1])
-    print exception_list
+#for line in open(os.path.join(ROOT_DIR,'basis','exception_list.txt')):
+#    exception_list.append(line[:-1])
+#    print exception_list
 
 fname_kor = open(os.path.join(ROOT_DIR,'kor_list_fmb.txt'),'w')
 fname_kor.write('Program' + SEP + 'Line' + SEP + 'Source'+SEP+'Translate'+'\r')
@@ -85,9 +85,9 @@ def check(w, program, lineNum, origin, line):
         return False
         
     
-    if check_kor(program, w, lineNum, origin, line):
-        fname_summary.write(program+SEP+'KOR'+SEP+str(lineNum)+SEP+origin)
-        flag = True
+    #if check_kor(program, w, lineNum, origin, line):
+    #    fname_summary.write(program+SEP+'KOR'+SEP+str(lineNum)+SEP+origin)
+    #    flag = True
     
     
     #lookup check
@@ -116,7 +116,7 @@ def check(w, program, lineNum, origin, line):
 #    os.system(command)
 
 textList = glob.glob(os.path.join(ROOT_DIR,'source_fmb_0327','*.txt'))
-target_dir = os.path.join(ROOT_DIR,'result_fmb')
+target_dir = os.path.join(ROOT_DIR,'temp')
 suffix = ''
 
 startTime = time.time()
