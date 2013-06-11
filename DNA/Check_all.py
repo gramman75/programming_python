@@ -1,4 +1,5 @@
 #-*- encoding:euc-kr -*-
+#-*- encoding:euc-kr -*-
 import glob, os, re, time
 #from microsofttranslator import Translator
 
@@ -13,8 +14,8 @@ check_lookup = []
 check_hardcoding =[]
 exception_list =[]
 
-#for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
-#    check_lookup.append(line[:-1])
+# for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
+    # check_lookup.append(line[:-1])
 
 for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding.txt')):
     check_hardcoding.append(line[:-1])        
@@ -115,7 +116,7 @@ def check(w, program, lineNum, origin, line):
 #    command = 'frmcmp.exe batch=yes module_type=form userid=devs/devs@erpprod forms_doc=YES WINDOW_STATE=MINIMIZE module='+formName
 #    os.system(command)
 
-textList = glob.glob(os.path.join(ROOT_DIR,'source_db_0328','*.*'))
+textList = glob.glob(os.path.join(ROOT_DIR,'04.Dynamic Query','*.*'))
 target_dir = os.path.join(ROOT_DIR,'temp')
 suffix = ''
 

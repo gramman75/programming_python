@@ -16,7 +16,7 @@ exception_list =[]
 #for line in  open(os.path.join(ROOT_DIR,'basis','audit_lookup.txt')):
 #    check_lookup.append(line[:-1])
 
-for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding_fmb.txt')):
+for line in  open(os.path.join(ROOT_DIR,'basis','audit_hardcoding.txt')):
     check_hardcoding.append(line[:-1])        
 
 #for line in open(os.path.join(ROOT_DIR,'basis','exception_list.txt')):
