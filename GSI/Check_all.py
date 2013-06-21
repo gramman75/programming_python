@@ -1,8 +1,6 @@
 #-*- encoding:euc-kr -*-
 import glob, os, re, time
 #from microsofttranslator import Translator
-
-
 #translator = Translator('GSI_CHECK', 'm1ZX2yz3UVbmx7s2TVoaonjIsSqLvNjUtSd0VL1peBw=')
 
 

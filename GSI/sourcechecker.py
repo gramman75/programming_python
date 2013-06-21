@@ -74,14 +74,22 @@ class MainWindow(QMainWindow):
         
         
         # Search Condition
-        
         self.directRadioBtn = QRadioButton('Direct Input')
+        self.directRadioBtn.setChecked(True)
         self.fileRadioBtn = QRadioButton('Select File')
         searchLabel = QLabel('Search Word')
         self.searchEdit = QLineEdit()
-        searchToolBtn = QToolButton()
-        searchToolBtn.setArrowType(Qt.UpArrow)
+        self.searchToolBtn = QToolButton()
+        self.searchToolBtn.setDisabled(True)
+        self.searchToolBtn.setArrowType(Qt.UpArrow)
         self.searchKorCheckBox = QCheckBox('Search Korean')
+        btnGroup = QButtonGroup()
+        btnGroup.addButton(self.directRadioBtn)
+        btnGroup.addButton(self.fileRadioBtn)
+        self.connect(self.fileRadioBtn,SIGNAL("clicked()"),self.enableBtn)
+        self.connect(self.directRadioBtn,SIGNAL("clicked()"),self.enableBtn)
+        self.connect(self.searchToolBtn,SIGNAL("clicked()"),self.selectSourceFile)
+        
         
         
         
@@ -90,7 +98,7 @@ class MainWindow(QMainWindow):
         searchLayout.addWidget(self.fileRadioBtn,0,2)
         searchLayout.addWidget(searchLabel,1,0)
         searchLayout.addWidget(self.searchEdit,1,1,1,2)
-        searchLayout.addWidget(searchToolBtn,1,3)
+        searchLayout.addWidget(self.searchToolBtn,1,3)
         searchLayout.addWidget(self.searchKorCheckBox,2,1)
         
         searchGroupBox = QGroupBox('Search Condition')
@@ -134,12 +142,27 @@ class MainWindow(QMainWindow):
         
     def selectSourceDir(self):
         dname = QFileDialog.getExistingDirectory(self, 'Select Directory')
-        self.sourceEdit.setText(dname)
+        if dname:
+            self.sourceEdit.setText(dname)
         
     def selectDestDir(self):
         dname = QFileDialog.getExistingDirectory(self, 'Select Directory')
-        self.destEdit.setText(dname)
+        if dname:
+            self.destEdit.setText(dname)
         
+    def selectSourceFile(self):
+#         fname = QFileDialog.getOpenFileName(self, 'Select File', dir,"Image files {1}".format("*.*"))
+        fname = QFileDialog.getOpenFileName(self, 'Select File')
+        if fname:
+            self.searchEdit.setText(fname)
+        
+    def enableBtn(self):
+        if self.fileRadioBtn.isChecked():
+            self.searchToolBtn.setEnabled(True)
+        
+        if self.directRadioBtn.isChecked():
+            self.searchToolBtn.setEnabled(False)
+             
     def fileNew(self):
         pass
     
